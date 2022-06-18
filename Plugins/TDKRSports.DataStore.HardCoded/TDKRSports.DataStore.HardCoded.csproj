@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+  <ProjectReference Include="..\..\TDKRSports.CoreBusiness\TDKRSports.CoreBusiness.csproj" />
+    <ProjectReference Include="..\..\TDKRSports.UseCases\TDKRSports.UseCases.csproj" />
+  </ItemGroup>
+
+</Project>
