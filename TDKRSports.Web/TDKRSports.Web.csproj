@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Plugins\TDKRSports.DataStore.HardCoded\TDKRSports.DataStore.HardCoded.csproj" />
+    <ProjectReference Include="..\Plugins\TDKRSports.ShoppingCart.LocalStorage\TDKRSports.ShoppingCart.LocalStorage.csproj" />
     <ProjectReference Include="..\TDKRSports.UseCases\TDKRSports.UseCases.csproj" />
     <ProjectReference Include="..\TDKRSports.Web.Modules\TDKRSports.Web.CustomerPortal\TDKRSports.Web.CustomerPortal.csproj" />
 	<ProjectReference Include="..\TDKRSports.Web.Modules\TDKRSports.Web.Common\TDKRSports.Web.Common.csproj" />

@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.Web.AdminPortal"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.Web.CustomerPortal", "TDKRSports.Web.Modules\TDKRSports.Web.CustomerPortal\TDKRSports.Web.CustomerPortal.csproj", "{0284C8DE-383A-41FA-A1D8-AC838F9AD013}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDKRSports.ShoppingCart.LocalStorage", "Plugins\TDKRSports.ShoppingCart.LocalStorage\TDKRSports.ShoppingCart.LocalStorage.csproj", "{82F71AB4-A47D-4994-A011-509434F3F184}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.ShoppingCart.LocalStorage", "Plugins\TDKRSports.ShoppingCart.LocalStorage\TDKRSports.ShoppingCart.LocalStorage.csproj", "{82F71AB4-A47D-4994-A011-509434F3F184}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

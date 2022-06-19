@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using TDKRSports.DataStore.HardCoded;
 using TDKRSports.UseCases.PluginInterfaces.DataStore;
+using TDKRSports.UseCases.PluginInterfaces.UI;
 using TDKRSports.UseCases.SearchProductScreen;
+using TDKRSports.UseCases.ShoppingCartScreen;
 using TDKRSports.UseCases.ViewProductScreen;
 using TDKRSports.Web.Data;
 
@@ -34,9 +36,15 @@ namespace TDKRSports.Web
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
 
+            //dependency injection
             services.AddSingleton<IProductRepository, ProductRepository>();
+
+            services.AddScoped<IShoppingCart, TDKRSports.ShoppingCart.LocalStorage.ShoppingCart>(); // ako je singleton svi useri ce moci vidjeti , ovako ce samo user vidit sam svoj cart
+
             services.AddTransient<IViewProductUseCase, ViewProductUseCase>();
             services.AddTransient<ISearchProductUseCase, SearchProductUseCase>();
+            services.AddTransient<IAddProductToCartUseCase, AddProductToCartUseCase>();
+            services.AddTransient<IViewShoppingCartUseCase, ViewShoppingCartUseCase>();
 
         }
 

@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TDKRSports.CoreBusiness.Models;
@@ -23,24 +24,33 @@ namespace TDKRSports.ShoppingCart.LocalStorage
             this.productRepository = productRepository;
         }
 
-        public Task<Order> AddProductAsync(Product product)
+        public async Task<Order> AddProductAsync(Product product)
         {
-            throw new NotImplementedException();
+            var order = await GetOrder();
+            order.AddProduct(product.ProductId, 1, product.Price);
+            await SetOrder(order);
+
+            return order;
         }
 
-        public Task<Order> DeleteProductAsync(int productId)
+        public async Task<Order> DeleteProductAsync(int productId)
         {
-            throw new NotImplementedException();
+            var order = await GetOrder();
+            order.RemoveProduct(productId);
+            await SetOrder(order);
+
+            return order;
         }
 
         public Task EmptyAsync()
         {
-            throw new NotImplementedException();
+            return this.SetOrder(null); // ostat ce u istom key-u stavit ce null u local storage {cstrShoppingCart} (a to je lose stavit null za key) popravit cemo u GetOrderu tkd.
+                                        // dodamo && strOrder.ToLower() != "null"
         }
 
-        public Task<Order> GetOrderAsync()
+        public async Task<Order> GetOrderAsync()
         {
-            throw new NotImplementedException();
+            return await GetOrder();
         }
 
         public Task<Order> PlaceOrderAsync()
@@ -48,14 +58,26 @@ namespace TDKRSports.ShoppingCart.LocalStorage
             throw new NotImplementedException();
         }
 
-        public Task<Order> UpdateOrderAsync(Order order)
+        public async Task<Order> UpdateOrderAsync(Order order)
         {
-            throw new NotImplementedException();
+            await this.SetOrder(order);
+            return order;
         }
 
-        public Task<Order> UpdateQuantityAsync(int productId, int quantity)
+        public async Task<Order> UpdateQuantityAsync(int productId, int quantity)
         {
-            throw new NotImplementedException();
+            var order = await GetOrder();
+            if (quantity < 0)
+                return order;
+            else if(quantity == 0)
+                return await DeleteProductAsync(productId);
+            
+            var lineItem = order.LineItems.SingleOrDefault(x => x.ProductId == productId);
+            if(lineItem != null) lineItem.Quantity = quantity;
+            await SetOrder(order);
+
+            return order;
+
         }
 
         private async Task<Order> GetOrder()//Async jer radimo za jsruntime
@@ -63,7 +85,7 @@ namespace TDKRSports.ShoppingCart.LocalStorage
             Order order = null;
 
             var strOrder = await jSRuntime.InvokeAsync<string>("localStorage.getItem", cstrShoppingCart);
-            if(!string.IsNullOrWhiteSpace(strOrder))
+            if(!string.IsNullOrWhiteSpace(strOrder) && strOrder.ToLower() != "null")
                 order = JsonConvert.DeserializeObject<Order>(strOrder);
             else
             {
