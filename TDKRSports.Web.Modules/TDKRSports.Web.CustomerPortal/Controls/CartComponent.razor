@@ -1,0 +1,33 @@
+﻿@implements IDisposable
+@inject IShoppingCartStateStore shoppingCartStateStore
+
+<a href="cart" class="btn btn-info">
+    <i class="bi bi-cart"></i>
+    Cart
+    <span class="badge badge-pill badge-light">@lineItemsCount</span>
+</a>
+
+@code {
+    private int lineItemsCount = 0;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            shoppingCartStateStore.AddStateChangeListeners(HandleShoppingCartStateChange);
+            lineItemsCount = await shoppingCartStateStore.GetItemsCount();
+            StateHasChanged();
+        }
+    }
+
+    private async void HandleShoppingCartStateChange() //Da bi refreshali komponentu tj. promjenu od line itema
+    {
+        lineItemsCount = await shoppingCartStateStore.GetItemsCount();
+        StateHasChanged();
+    }
+
+    public void Dispose() // radi memory leaka ako ne disposeamo nece nikad bit realeasan ni collectan od strane gc-a
+    {
+        shoppingCartStateStore.RemoveStateChangeListeners(HandleShoppingCartStateChange); 
+    }
+}

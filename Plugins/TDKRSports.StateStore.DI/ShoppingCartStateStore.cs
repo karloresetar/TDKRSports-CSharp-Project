@@ -28,5 +28,10 @@ namespace TDKRSports.StateStore.DI
         {
             base.BroadCastStateChange();
         }
+
+        public void UpdateProductQuantity()
+        {
+            base.BroadCastStateChange(); // broadcastamo jer kad se quantity promini minja se i count od item-a
+        }
     }
 }
