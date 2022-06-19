@@ -10,7 +10,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TDKRSports.DataStore.HardCoded;
+using TDKRSports.StateStore.DI;
 using TDKRSports.UseCases.PluginInterfaces.DataStore;
+using TDKRSports.UseCases.PluginInterfaces.StateStore;
 using TDKRSports.UseCases.PluginInterfaces.UI;
 using TDKRSports.UseCases.SearchProductScreen;
 using TDKRSports.UseCases.ShoppingCartScreen;
@@ -40,6 +42,7 @@ namespace TDKRSports.Web
             services.AddSingleton<IProductRepository, ProductRepository>();
 
             services.AddScoped<IShoppingCart, TDKRSports.ShoppingCart.LocalStorage.ShoppingCart>(); // ako je singleton svi useri ce moci vidjeti , ovako ce samo user vidit sam svoj cart
+            services.AddScoped<IShoppingCartStateStore, ShoppingCartStateStore>();
 
             services.AddTransient<IViewProductUseCase, ViewProductUseCase>();
             services.AddTransient<ISearchProductUseCase, SearchProductUseCase>();

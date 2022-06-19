@@ -7,15 +7,15 @@
         <div class="col">
             <h5>@LineItem.Product.Name</h5>
             <div>
-                Quantity:&nbsp;&nbsp;
+                <b>Quantity:&nbsp;&nbsp;</b>
                 <input type="number" min="0" value="@LineItem.Quantity" @onchange="HandleQuantityChange" />
             </div>
             <div>
-                Price:&nbsp;&nbsp;@LineItem.Product.Price.ToString("C")
+                <b>Price:&nbsp;&nbsp;@LineItem.Product.Price.ToString("C")</b>
             </div>
         </div>
         <div class="col">
-            <button class="btn btn-light" @onclick="@(() => DeleteProduct(LineItem.ProductId))">Delete</button>
+            <button class="btn btn-light" style="background-color:darkred" @onclick="@(() => DeleteProduct(LineItem.ProductId))"><b>Delete</b></button>
         </div>
     </li>
 }
