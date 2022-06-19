@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDKRSports.Web", "TDKRSports.Web\TDKRSports.Web.csproj", "{A6519478-EF32-4DB6-945F-5214517F72CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.Web", "TDKRSports.Web\TDKRSports.Web.csproj", "{A6519478-EF32-4DB6-945F-5214517F72CF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.CoreBusiness", "TDKRSports.CoreBusiness\TDKRSports.CoreBusiness.csproj", "{A4AA0F6B-1807-40D8-B999-B24BC2499C0C}"
 EndProject
@@ -15,11 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.DataStore.HardCo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TDKRSports.Web.Modules", "TDKRSports.Web.Modules", "{20B76EFC-032D-4301-BAC0-66AB997E6CA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDKRSports.Web.Common", "TDKRSports.Web.Modules\TDKRSports.Web.Common\TDKRSports.Web.Common.csproj", "{6F40D64E-2B9F-40F4-9DBD-FB75F00DF47A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.Web.Common", "TDKRSports.Web.Modules\TDKRSports.Web.Common\TDKRSports.Web.Common.csproj", "{6F40D64E-2B9F-40F4-9DBD-FB75F00DF47A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDKRSports.Web.AdminPortal", "TDKRSports.Web.Modules\TDKRSports.Web.AdminPortal\TDKRSports.Web.AdminPortal.csproj", "{B6315C74-9625-410B-931C-959776209CDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.Web.AdminPortal", "TDKRSports.Web.Modules\TDKRSports.Web.AdminPortal\TDKRSports.Web.AdminPortal.csproj", "{B6315C74-9625-410B-931C-959776209CDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDKRSports.Web.CustomerPortal", "TDKRSports.Web.Modules\TDKRSports.Web.CustomerPortal\TDKRSports.Web.CustomerPortal.csproj", "{0284C8DE-383A-41FA-A1D8-AC838F9AD013}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.Web.CustomerPortal", "TDKRSports.Web.Modules\TDKRSports.Web.CustomerPortal\TDKRSports.Web.CustomerPortal.csproj", "{0284C8DE-383A-41FA-A1D8-AC838F9AD013}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDKRSports.ShoppingCart.LocalStorage", "Plugins\TDKRSports.ShoppingCart.LocalStorage\TDKRSports.ShoppingCart.LocalStorage.csproj", "{82F71AB4-A47D-4994-A011-509434F3F184}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{0284C8DE-383A-41FA-A1D8-AC838F9AD013}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0284C8DE-383A-41FA-A1D8-AC838F9AD013}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0284C8DE-383A-41FA-A1D8-AC838F9AD013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82F71AB4-A47D-4994-A011-509434F3F184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82F71AB4-A47D-4994-A011-509434F3F184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82F71AB4-A47D-4994-A011-509434F3F184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82F71AB4-A47D-4994-A011-509434F3F184}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{6F40D64E-2B9F-40F4-9DBD-FB75F00DF47A} = {20B76EFC-032D-4301-BAC0-66AB997E6CA3}
 		{B6315C74-9625-410B-931C-959776209CDB} = {20B76EFC-032D-4301-BAC0-66AB997E6CA3}
 		{0284C8DE-383A-41FA-A1D8-AC838F9AD013} = {20B76EFC-032D-4301-BAC0-66AB997E6CA3}
+		{82F71AB4-A47D-4994-A011-509434F3F184} = {1B60F0EE-A2E6-4102-ADEE-BC1422C6DA9D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B3EA4B36-377B-40EC-8835-FDD676D0AD59}

@@ -1,7 +1,8 @@
 ﻿@page "/product/{id:int}"
 
-
+@inject NavigationManager navigationManager
 @inject IViewProductUseCase viewProductUseCase
+@inject IAddProductToCartUseCase addProductToCartUseCase
 
 <h3>Product Details</h3>
 
@@ -17,6 +18,7 @@
     <p class="card-text">@product.Description</p>
     
   </div>
+  <button class="btn btn-primary" @onclick="AddToCart">AddToCart</button>
 </div>
 <br />
 <NavLink href="products">Back to all products</NavLink>
@@ -35,6 +37,12 @@
         {
             product = viewProductUseCase.Execute(Id);
         }
+    }
+
+    private void AddToCart()
+    {
+        addProductToCartUseCase.Execute(product.Id);
+        navigationManager.NavigateTo("/");
     }
 
 }
