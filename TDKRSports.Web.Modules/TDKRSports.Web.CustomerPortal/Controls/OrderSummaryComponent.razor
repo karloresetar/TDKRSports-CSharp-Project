@@ -1,4 +1,4 @@
-﻿@inject NavigationManager NavigationManager
+﻿@inject NavigationManager navigationManager
 
     <div class="card m-2" style="width: 25rem;">
         <div class="card-body">
@@ -62,6 +62,6 @@
 
     private void PlaceOrder()
     {
-        
+        navigationManager.NavigateTo("/PlaceOrder");
     }
 }

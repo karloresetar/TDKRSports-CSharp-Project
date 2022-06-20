@@ -1,4 +1,7 @@
-﻿@if (LineItem != null && LineItem.Product != null)
+﻿@inject IDeleteProductUseCase deleteProductUseCase
+@inject IUpdateQuantityUseCase updateQuantityUseCase
+
+@if (LineItem != null && LineItem.Product != null)
 {
     <li class="row">
         <div class="col">
@@ -15,7 +18,7 @@
             </div>
         </div>
         <div class="col">
-            <button class="btn btn-light" style="background-color:darkred" @onclick="@(() => DeleteProduct(LineItem.ProductId))"><b>Delete</b></button>
+            <button class="btn btn-light" @onclick="@(() => DeleteProduct(LineItem.ProductId))"><b>Delete</b></button>
         </div>
     </li>
 }
@@ -24,13 +27,32 @@
     [Parameter]
     public OrderLineItem LineItem { get; set; }
 
-    void HandleQuantityChange()
-    {
+    [Parameter]
+    public EventCallback<Order> OnDeleteProduct { get; set; }
 
+    [Parameter]
+    public EventCallback<Order> OnUpdateQuantity { get; set; }
+
+    async void HandleQuantityChange(ChangeEventArgs e)
+    {
+        if (e.Value == null || string.IsNullOrWhiteSpace(e.Value.ToString())) return;
+        int qty = 0;
+        if (int.TryParse(e.Value.ToString(),out qty))
+        {
+            if (qty < 0)
+            {
+                return;
+            }
+
+            var order = await updateQuantityUseCase.Execute(LineItem.ProductId, qty);
+            await OnUpdateQuantity.InvokeAsync(order);
+
+         }
     }
 
-    void DeleteProduct(int productId)
+    async void DeleteProduct(int productId)
     {
-        
+        var order = await deleteProductUseCase.Execute(productId); // order je u parent komponenti tj. u shoppingCart komponenti i tribamo updateat pomocu EventCallbackova
+        await OnDeleteProduct.InvokeAsync(order);
     }
 }
