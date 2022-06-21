@@ -17,6 +17,7 @@ namespace TDKRSports.UseCases.ShoppingCartScreen
         {
             this.shoppingCart = shoppingCart;
             this.shoppingCartStateStore = shoppingCartStateStore;
+            
         }
         public async Task<Order> Execute(int productId)
         {

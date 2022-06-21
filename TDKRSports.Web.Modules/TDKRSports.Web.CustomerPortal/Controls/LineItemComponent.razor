@@ -1,6 +1,8 @@
 ﻿@inject IDeleteProductUseCase deleteProductUseCase
 @inject IUpdateQuantityUseCase updateQuantityUseCase
 
+<MessageComponent @ref="messageComponent"></MessageComponent>
+
 @if (LineItem != null && LineItem.Product != null)
 {
     <li class="row">
@@ -33,6 +35,8 @@
     [Parameter]
     public EventCallback<Order> OnUpdateQuantity { get; set; }
 
+    MessageComponent messageComponent;
+
     async void HandleQuantityChange(ChangeEventArgs e)
     {
         if (e.Value == null || string.IsNullOrWhiteSpace(e.Value.ToString())) return;
@@ -41,6 +45,8 @@
         {
             if (qty < 0)
             {
+
+                messageComponent.ShowError("Quantity of a line item cannot be less than zero.");
                 return;
             }
 
