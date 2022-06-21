@@ -37,7 +37,10 @@
                 </div>
             </div>
         </div>
+        @if(!HidePlaceOrder)
+        {
             <button class="button btn-primary" @onclick="PlaceOrder">Place your order</button>
+        }
     </div>
 
 
@@ -47,6 +50,9 @@
 
     [Parameter]
     public Order Order { get; set; }
+
+    [Parameter]
+    public bool HidePlaceOrder { get; set; } = false; //ako smo na ruti placeorder da nam se ne vidi botun PlaceYourOrder jer korisnik je to vec dodao na ruti shoppingcart
 
     protected override void OnParametersSet()
     {

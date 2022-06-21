@@ -1,0 +1,55 @@
+﻿@page "/placeorder"
+
+@inject NavigationManager navigationManager
+
+@inject IViewShoppingCartUseCase viewShoppingCartUseCase
+@inject IPlaceOrderUseCase placeOrderUseCase
+
+
+<h3>Placing Order</h3>
+<br />
+
+@if (order != null)
+{
+<div class="row">
+    <div class="col">
+        @*uzimanje informacija od customera*@
+        <CustomerFormComponent OnCustomerInfoSubmitted="HandleCustomerInfoSubmitted"></CustomerFormComponent>
+    </div>
+    <div class="col">
+        @*prikaz narudzbe*@
+        <OrderSummaryComponent Order="order" HidePlaceOrder="true"></OrderSummaryComponent>
+    </div>
+</div>
+}
+
+@code {
+    private Order order;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if(firstRender)
+        {
+            order = await viewShoppingCartUseCase.Execute(); // koristimo ovaj usecase za gettanje ordera
+            StateHasChanged();
+        }
+    }
+
+    private async void HandleCustomerInfoSubmitted(CustomerViewModel customer)
+    {
+        var mapper = new AutoMapper.MapperConfiguration(cfg => cfg.CreateMap<CustomerViewModel, Order>()).CreateMapper();
+        mapper.Map<CustomerViewModel, Order>(customer, order);
+
+        var orderUniqueId = await placeOrderUseCase.Execute(order);
+        if (string.IsNullOrWhiteSpace(orderUniqueId))
+        {
+            // error occured, not able to place order, please contact the admin
+            //msgComponent.ShowError("Information in the order is invalid, please double check.");
+        }
+        else
+        {
+            navigationManager.NavigateTo($"/orderconfirm/{orderUniqueId}");
+        }
+    }
+
+}

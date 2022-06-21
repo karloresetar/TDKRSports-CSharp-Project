@@ -9,8 +9,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TDKRSports.CoreBusiness.Services;
 using TDKRSports.DataStore.HardCoded;
 using TDKRSports.StateStore.DI;
+using TDKRSports.UseCases.OrderConfirmationScreen;
 using TDKRSports.UseCases.PluginInterfaces.DataStore;
 using TDKRSports.UseCases.PluginInterfaces.StateStore;
 using TDKRSports.UseCases.PluginInterfaces.UI;
@@ -38,12 +40,17 @@ namespace TDKRSports.Web
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
 
-            //dependency injection
+            //dependency injection SINGLETONS
+            //singleton sve sta je baza
             services.AddSingleton<IProductRepository, ProductRepository>();
+            services.AddSingleton<IOrderRepository, OrderRepository>();
 
+            //dependency injection SCOPES
             services.AddScoped<IShoppingCart, TDKRSports.ShoppingCart.LocalStorage.ShoppingCart>(); // ako je singleton svi useri ce moci vidjeti , ovako ce samo user vidit sam svoj cart
             services.AddScoped<IShoppingCartStateStore, ShoppingCartStateStore>();
 
+            //dependency injection TRANSIENTS
+            services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<IViewProductUseCase, ViewProductUseCase>();
             services.AddTransient<ISearchProductUseCase, SearchProductUseCase>();
             services.AddTransient<IAddProductToCartUseCase, AddProductToCartUseCase>();
@@ -51,6 +58,7 @@ namespace TDKRSports.Web
             services.AddTransient<IDeleteProductUseCase, DeleteProductUseCase>();
             services.AddTransient<IUpdateQuantityUseCase, UpdateQuantityUseCase>();
             services.AddTransient<IPlaceOrderUseCase, PlaceOrderUseCase>();
+            services.AddTransient<IViewOrderConfirmationUseCase,ViewOrderConfirmationUseCase>();
 
         }
 
