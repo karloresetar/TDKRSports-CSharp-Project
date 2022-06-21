@@ -9,6 +9,7 @@
     <ProjectReference Include="..\Plugins\TDKRSports.ShoppingCart.LocalStorage\TDKRSports.ShoppingCart.LocalStorage.csproj" />
     <ProjectReference Include="..\Plugins\TDKRSports.StateStore.DI\TDKRSports.StateStore.DI.csproj" />
     <ProjectReference Include="..\TDKRSports.UseCases\TDKRSports.UseCases.csproj" />
+    <ProjectReference Include="..\TDKRSports.Web.Modules\TDKRSports.Web.AdminPortal\TDKRSports.Web.AdminPortal.csproj" />
     <ProjectReference Include="..\TDKRSports.Web.Modules\TDKRSports.Web.CustomerPortal\TDKRSports.Web.CustomerPortal.csproj" />
 	<ProjectReference Include="..\TDKRSports.Web.Modules\TDKRSports.Web.Common\TDKRSports.Web.Common.csproj" />
   </ItemGroup>
