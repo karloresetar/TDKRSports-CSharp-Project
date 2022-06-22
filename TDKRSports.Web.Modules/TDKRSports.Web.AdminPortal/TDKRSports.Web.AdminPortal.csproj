@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\OutstandingOrdersComponent.razor" />
+    <Content Remove="Pages\OrderDetailComponent.razor" />
   </ItemGroup>
 
 
@@ -27,14 +27,14 @@
 
 
   <ItemGroup>
-    <None Include="Pages\OutstandingOrdersComponent.razor" />
+    <ProjectReference Include="..\..\TDKRSports.CoreBusiness\TDKRSports.CoreBusiness.csproj" />
+    <ProjectReference Include="..\..\TDKRSports.UseCases\TDKRSports.UseCases.csproj" />
+    <ProjectReference Include="..\TDKRSports.Web.Common\TDKRSports.Web.Common.csproj" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\TDKRSports.CoreBusiness\TDKRSports.CoreBusiness.csproj" />
-    <ProjectReference Include="..\..\TDKRSports.UseCases\TDKRSports.UseCases.csproj" />
-    <ProjectReference Include="..\TDKRSports.Web.Common\TDKRSports.Web.Common.csproj" />
+    <None Include="Pages\OrderDetailComponent.razor" />
   </ItemGroup>
 
 </Project>

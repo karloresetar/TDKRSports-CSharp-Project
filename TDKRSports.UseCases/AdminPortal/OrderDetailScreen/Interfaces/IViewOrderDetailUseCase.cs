@@ -2,7 +2,7 @@
 
 namespace TDKRSports.UseCases.AdminPortal.OrderDetailScreen.Interfaces
 {
-    internal interface IViewOrderDetailUseCase
+    public interface IViewOrderDetailUseCase
     {
         Order Execute(int orderId);
     }

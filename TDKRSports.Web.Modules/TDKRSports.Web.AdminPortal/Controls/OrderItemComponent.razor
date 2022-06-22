@@ -4,13 +4,13 @@
         <td>
             @if (Order.DatePlaced.HasValue)
             {
-                Order.DatePlaced.Value.ToString("yyyy-MM-dd");
+                @Order.DatePlaced.Value.ToString("yyyy-MM-dd");
             }
         </td>
         <td>
-            @if(Order.DateProcessed.HasValue)
+            @if (!Order.DateProcessed.HasValue)
             {
-                <NavLink href="@($"processorder/{Order.OrderId}")">
+                <NavLink href="@($"orderdetail/{Order.OrderId.Value}")">
                     @Order.OrderId
                 </NavLink>
             }

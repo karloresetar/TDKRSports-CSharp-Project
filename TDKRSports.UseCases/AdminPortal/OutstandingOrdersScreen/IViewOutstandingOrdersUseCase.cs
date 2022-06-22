@@ -3,7 +3,7 @@ using TDKRSports.CoreBusiness.Models;
 
 namespace TDKRSports.UseCases.AdminPortal.OutstandingOrdersScreen
 {
-    internal interface IViewOutstandingOrdersUseCase
+    public interface IViewOutstandingOrdersUseCase
     {
         IEnumerable<Order> Execute();
     }

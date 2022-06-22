@@ -2,7 +2,7 @@
 <Router AppAssembly="@typeof(Program).Assembly"
         AdditionalAssemblies="new[] {
                                     typeof(TDKRSports.Web.CustomerPortal.Pages.ViewProductComponent).Assembly,
-                                    //typeof(TDKRSports.Web.AdminPortal.Pages.OutstandingOrdersComponent).Assembly
+                                    typeof(TDKRSports.Web.AdminPortal.Pages.OutstandingOrdersComponent).Assembly
                               }">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />

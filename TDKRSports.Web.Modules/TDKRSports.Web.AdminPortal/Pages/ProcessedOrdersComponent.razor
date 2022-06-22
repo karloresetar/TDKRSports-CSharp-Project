@@ -1,11 +1,12 @@
-﻿@page "/outstandingorders"
+﻿@page "/processedorders"
+
 @using TDKRSports.CoreBusiness.Models
-@using TDKRSports.UseCases.AdminPortal.OutstandingOrdersScreen
+@using TDKRSports.UseCases.AdminPortal.ProccesedOrdersScreen
 @using TDKRSports.Web.AdminPortal.Controls
 
-@inject IViewOutstandingOrdersUseCase viewOutstandingOrdersUseCase
+@inject IViewProcessedOrdersUseCase viewProcessedOrdersUseCase 
 
-<h3>Outstanding Orders</h3>
+<h3>Processed Orders</h3>
 <br />
 <OrderListComponent Orders="orders"></OrderListComponent>
 
@@ -16,6 +17,6 @@
     {
         base.OnInitialized();
 
-        orders = viewOutstandingOrdersUseCase.Execute();
+        orders = viewProcessedOrdersUseCase.Execute();
     }
 }
