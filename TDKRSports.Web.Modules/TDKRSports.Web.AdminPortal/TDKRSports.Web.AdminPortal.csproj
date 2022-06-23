@@ -11,4 +11,21 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.22" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\OutstandingOrdersComponent.razor" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\OutstandingOrdersComponent.razor" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\TDKRSports.CoreBusiness\TDKRSports.CoreBusiness.csproj" />
+    <ProjectReference Include="..\..\TDKRSports.UseCases\TDKRSports.UseCases.csproj" />
+    <ProjectReference Include="..\TDKRSports.Web.Common\TDKRSports.Web.Common.csproj" />
+  </ItemGroup>
+
 </Project>

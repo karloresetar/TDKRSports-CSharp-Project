@@ -19,7 +19,11 @@ using TDKRSports.UseCases.PluginInterfaces.UI;
 using TDKRSports.UseCases.SearchProductScreen;
 using TDKRSports.UseCases.ShoppingCartScreen;
 using TDKRSports.UseCases.ViewProductScreen;
+using TDKRSports.UseCases.AdminPortal.OutstandingOrdersScreen;
+using TDKRSports.UseCases.AdminPortal.ProccesedOrdersScreen;
+using TDKRSports.UseCases.AdminPortal.OrderDetailScreen;
 using TDKRSports.Web.Data;
+using TDKRSports.UseCases.AdminPortal.OrderDetailScreen.Interfaces;
 
 namespace TDKRSports.Web
 {
@@ -59,6 +63,10 @@ namespace TDKRSports.Web
             services.AddTransient<IUpdateQuantityUseCase, UpdateQuantityUseCase>();
             services.AddTransient<IPlaceOrderUseCase, PlaceOrderUseCase>();
             services.AddTransient<IViewOrderConfirmationUseCase,ViewOrderConfirmationUseCase>();
+            services.AddTransient<IViewOutstandingOrdersUseCase, ViewOutstandingOrdersUseCase>();
+            services.AddTransient<IProcessOrderUseCase, ProcessOrderUseCase>();
+            services.AddTransient<IViewOrderDetailUseCase, ViewOrderDetailUseCase>();
+            services.AddTransient<IViewProcessedOrdersUseCase, ViewProcessedOrdersUseCase>();
 
         }
 
