@@ -10,7 +10,7 @@
         <td>
             @if (!Order.DateProcessed.HasValue)
             {
-                <NavLink href="@($"orderdetail/{Order.OrderId.Value}")">
+                <NavLink href="@($"orderdetail/{Order.OrderId}")">
                     @Order.OrderId
                 </NavLink>
             }
