@@ -32,8 +32,8 @@
         loginViewModel = new LoginViewModel();
     }
 
-    private HandleValidSubmit()
+    private void HandleValidSubmit()
     {
-        navigationManager.NavigateTo($"authenticate?usr={loginViewModel.UserName}&pwd={loginViewModel.Password}", true);
+        navigationManager.NavigateTo($"/authenticate?user={loginViewModel.UserName}&pwd={loginViewModel.Password}", true);
     }
 }
