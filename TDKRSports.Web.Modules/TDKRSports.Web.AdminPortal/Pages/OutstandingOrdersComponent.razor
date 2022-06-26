@@ -1,7 +1,12 @@
 ﻿@page "/outstandingorders"
+@page "/admin"
+
 @using TDKRSports.CoreBusiness.Models
 @using TDKRSports.UseCases.AdminPortal.OutstandingOrdersScreen
 @using TDKRSports.Web.AdminPortal.Controls
+@using Microsoft.AspNetCore.Authorization
+
+@attribute [Authorize]
 
 @inject IViewOutstandingOrdersUseCase viewOutstandingOrdersUseCase
 
