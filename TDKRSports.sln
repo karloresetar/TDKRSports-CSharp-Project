@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.ShoppingCart.Loc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.StateStore.DI", "Plugins\TDKRSports.StateStore.DI\TDKRSports.StateStore.DI.csproj", "{BA411128-5D3D-4A0B-BBD9-B968BD9C460C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDKRSports.Dapper", "TDKRSports.Dapper\TDKRSports.Dapper.csproj", "{F9FC1495-B84C-4608-95C7-FD5790655806}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{BA411128-5D3D-4A0B-BBD9-B968BD9C460C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA411128-5D3D-4A0B-BBD9-B968BD9C460C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA411128-5D3D-4A0B-BBD9-B968BD9C460C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9FC1495-B84C-4608-95C7-FD5790655806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9FC1495-B84C-4608-95C7-FD5790655806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9FC1495-B84C-4608-95C7-FD5790655806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9FC1495-B84C-4608-95C7-FD5790655806}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
