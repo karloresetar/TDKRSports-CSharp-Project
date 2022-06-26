@@ -53,5 +53,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TDKRSports.CoreBusiness\TDKRSports.CoreBusiness.csproj">
+      <Project>{a4aa0f6b-1807-40d8-b999-b24bc2499c0c}</Project>
+      <Name>TDKRSports.CoreBusiness</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

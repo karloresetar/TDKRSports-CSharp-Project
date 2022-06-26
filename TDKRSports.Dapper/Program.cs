@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TDKRSports.CoreBusiness.Models;
 
 namespace TDKRSports.Dapper
 {
@@ -13,13 +14,15 @@ namespace TDKRSports.Dapper
     {
         static void Main(string[] args)
         {
-            var connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=TDKR_sport_db;Integrated Security=true";
+            var connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=TDKRSports.Database;Integrated Security=true";
             using (IDbConnection conn = new SqlConnection(connectionString))
             {
-                var result = conn.Query("SELECT * FROM Products");
+                var result = conn.Query<Product>("SELECT * FROM Products");
                 foreach(var record in result)
                 {
                     Console.Write(record.Name);
+                    Console.Write(record.Brand);
+                    Console.Write(record.Price);
                 }
             }
         }
