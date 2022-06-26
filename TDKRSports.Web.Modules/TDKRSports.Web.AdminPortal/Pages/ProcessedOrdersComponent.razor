@@ -3,6 +3,9 @@
 @using TDKRSports.CoreBusiness.Models
 @using TDKRSports.UseCases.AdminPortal.ProccesedOrdersScreen
 @using TDKRSports.Web.AdminPortal.Controls
+@using Microsoft.AspNetCore.Authorization
+
+@attribute [Authorize]
 
 @inject IViewProcessedOrdersUseCase viewProcessedOrdersUseCase 
 

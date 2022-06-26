@@ -8,8 +8,4 @@
     <ProjectReference Include="..\TDKRSports.CoreBusiness\TDKRSports.CoreBusiness.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="CustomerPortal\" />
-  </ItemGroup>
-
 </Project>

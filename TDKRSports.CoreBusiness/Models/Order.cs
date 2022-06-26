@@ -22,6 +22,8 @@ namespace TDKRSports.CoreBusiness.Models
         public string CustomerCity { get; set; }
         public string CustomerStateProvince { get; set; }
         public string CustomerCountry { get; set; }
+        public string CustomerEmail { get; set; }
+
         public string AdminUser { get; set; }
         public List<OrderLineItem> LineItems { get; set; }
         public string UniqueId { get; set; }
@@ -39,16 +41,6 @@ namespace TDKRSports.CoreBusiness.Models
         {
             var item = LineItems.FirstOrDefault(x => x.ProductId == productId);
             if(item != null) LineItems.Remove(item);
-
-            //foreach (var item in LineItems)
-            //{
-            //    if (item.ProductId == productId)
-            //    {
-            //        LineItems.Remove(item);
-            //        break;
-            //    }
-
-            //}
         }
     }
 }

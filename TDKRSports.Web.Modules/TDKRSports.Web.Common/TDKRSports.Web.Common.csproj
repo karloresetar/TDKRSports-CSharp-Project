@@ -16,4 +16,14 @@
     <ProjectReference Include="..\..\TDKRSports.CoreBusiness\TDKRSports.CoreBusiness.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Controls\LoginComponent.razor" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Controls\LoginComponent.razor" />
+  </ItemGroup>
+
 </Project>

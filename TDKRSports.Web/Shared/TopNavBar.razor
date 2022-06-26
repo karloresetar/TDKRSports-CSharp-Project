@@ -3,16 +3,29 @@
         <li class="nav-item">
             <a class="navbar-brand" href="">TDKRSports</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="outstandingorders">Outstanding orders</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="processedorders">Processed orders</a>
-        </li>
+        <AuthorizeView>
+            <Authorized>
+                <li class="nav-item">
+                    <a class="nav-link" href="outstandingorders">Outstanding orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="processedorders">Processed orders</a>
+                </li>
+            </Authorized>
+        </AuthorizeView>
         <li class="nav-item ml-auto">
-            <NavLink class="nav-link" href="cart">
-                <TDKRSports.Web.CustomerPortal.Controls.CartComponent></TDKRSports.Web.CustomerPortal.Controls.CartComponent>
-            </NavLink>
+            <AuthorizeView>
+                <Authorized>
+                    <NavLink class="nav-link" href="/logout">
+                        Sign Out
+                    </NavLink>
+                </Authorized>
+                <NotAuthorized>
+                    <NavLink class="nav-link" href="cart">
+                        <TDKRSports.Web.CustomerPortal.Controls.CartComponent></TDKRSports.Web.CustomerPortal.Controls.CartComponent>
+                    </NavLink>
+                </NotAuthorized>
+            </AuthorizeView>
         </li>
     </ul>
 </div>
