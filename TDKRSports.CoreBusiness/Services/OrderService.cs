@@ -13,13 +13,15 @@ namespace TDKRSports.CoreBusiness.Services
                 string address,
                 string city,
                 string provice,
-                string country)
+                string country,
+                string email)
         {
             if (string.IsNullOrWhiteSpace(name) ||
                 string.IsNullOrWhiteSpace(address) ||
                 string.IsNullOrWhiteSpace(city) ||
                 string.IsNullOrWhiteSpace(provice) ||
-                string.IsNullOrWhiteSpace(country)) return false;
+                string.IsNullOrWhiteSpace(country) ||
+                string.IsNullOrWhiteSpace(email)) return false;
 
             return true;
         }
@@ -46,7 +48,8 @@ namespace TDKRSports.CoreBusiness.Services
                     order.CustomerAddress,
                     order.CustomerCity,
                     order.CustomerStateProvince,
-                    order.CustomerCountry)) return false;
+                    order.CustomerCountry,
+                    order.CustomerEmail)) return false;
 
             return true;
         }
@@ -83,7 +86,8 @@ namespace TDKRSports.CoreBusiness.Services
                     order.CustomerAddress,
                     order.CustomerCity,
                     order.CustomerStateProvince,
-                    order.CustomerCountry)) return false;
+                    order.CustomerCountry,
+                    order.CustomerEmail)) return false;
 
             return true;
         }
