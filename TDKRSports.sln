@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.ShoppingCart.Loc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.StateStore.DI", "Plugins\TDKRSports.StateStore.DI\TDKRSports.StateStore.DI.csproj", "{BA411128-5D3D-4A0B-BBD9-B968BD9C460C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDKRSports.DataStore.SQL.Dapper", "Plugins\TDKRSports.DataStore.SQL.Dapper\TDKRSports.DataStore.SQL.Dapper.csproj", "{E52B3003-B269-4BDB-AEBF-0F2DE6BEA673}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{BA411128-5D3D-4A0B-BBD9-B968BD9C460C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA411128-5D3D-4A0B-BBD9-B968BD9C460C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA411128-5D3D-4A0B-BBD9-B968BD9C460C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E52B3003-B269-4BDB-AEBF-0F2DE6BEA673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E52B3003-B269-4BDB-AEBF-0F2DE6BEA673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E52B3003-B269-4BDB-AEBF-0F2DE6BEA673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E52B3003-B269-4BDB-AEBF-0F2DE6BEA673}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 		{0284C8DE-383A-41FA-A1D8-AC838F9AD013} = {20B76EFC-032D-4301-BAC0-66AB997E6CA3}
 		{82F71AB4-A47D-4994-A011-509434F3F184} = {1B60F0EE-A2E6-4102-ADEE-BC1422C6DA9D}
 		{BA411128-5D3D-4A0B-BBD9-B968BD9C460C} = {1B60F0EE-A2E6-4102-ADEE-BC1422C6DA9D}
+		{E52B3003-B269-4BDB-AEBF-0F2DE6BEA673} = {1B60F0EE-A2E6-4102-ADEE-BC1422C6DA9D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B3EA4B36-377B-40EC-8835-FDD676D0AD59}
