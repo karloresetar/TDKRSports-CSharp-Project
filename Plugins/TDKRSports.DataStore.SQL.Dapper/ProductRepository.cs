@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using TDKRSports.CoreBusiness.Models;
-using TDKRSports.Dapper;
 using TDKRSports.UseCases.PluginInterfaces.DataStore;
 
 namespace TDKRSports.DataStore.SQL.Dapper

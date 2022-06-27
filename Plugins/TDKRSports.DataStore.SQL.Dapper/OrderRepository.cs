@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using TDKRSports.CoreBusiness.Models;
-using TDKRSports.Dapper;
 using TDKRSports.UseCases.PluginInterfaces.DataStore;
 
 namespace TDKRSports.DataStore.SQL.Dapper
@@ -89,7 +88,7 @@ namespace TDKRSports.DataStore.SQL.Dapper
                                         ,OrderId = @OrderId
                                         ,Quantity = @Quantity
                                         ,Price = @Price
-                                        WHERE LineItemId = @LineItemId)";
+                                        WHERE LineItemId = @LineItemId";
             dataAccess.Execute<List<OrderLineItem>>(sqlOrderLineItemString, order.LineItems);
         }
 

@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace TDKRSports.Dapper
+namespace TDKRSports.DataStore.SQL.Dapper
 {
     public class DataAccess : IDataAccess
     {

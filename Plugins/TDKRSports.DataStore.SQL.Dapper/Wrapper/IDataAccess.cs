@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TDKRSports.Dapper
+namespace TDKRSports.DataStore.SQL.Dapper
 {
     public interface IDataAccess
     {
