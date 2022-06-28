@@ -17,7 +17,7 @@ namespace TDKRSports.DataStore.SQL.Dapper
 
         public Product GetProduct(int id)
         {
-            return dataAccess.QuerySingle<Product, dynamic>("SELECT * FROM Products WHERE ProductId=@Id", new { Id = id });
+            return dataAccess.QuerySingle<Product, dynamic>("SELECT * FROM Product WHERE ProductId=@Id", new { Id = id });
         }
 
         public IEnumerable<Product> GetProducts(string filter = null)
@@ -25,11 +25,11 @@ namespace TDKRSports.DataStore.SQL.Dapper
             List<Product> products;
             if (string.IsNullOrWhiteSpace(filter))
             {
-                products = dataAccess.Query<Product, dynamic>("SELECT * FROM Products", new { });
+                products = dataAccess.Query<Product, dynamic>("SELECT * FROM Product", new { });
             }
             else
             {
-                products = dataAccess.Query<Product, dynamic>("SELECT * FROM Products WHERE Name LIKE '%' + @Filter + '%'", new { Filter = filter });
+                products = dataAccess.Query<Product, dynamic>("SELECT * FROM Product WHERE Name LIKE '%' + @Filter + '%'", new { Filter = filter });
             }
             return products.AsEnumerable();
         }
