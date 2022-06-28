@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\TDKRSports.CoreBusiness\TDKRSports.CoreBusiness.csproj" />
+    <ProjectReference Include="..\..\TDKRSports.UseCases\TDKRSports.UseCases.csproj" />
+  </ItemGroup>
+
+</Project>

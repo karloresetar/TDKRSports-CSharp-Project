@@ -10,7 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TDKRSports.CoreBusiness.Services;
-using TDKRSports.DataStore.HardCoded;
+//using TDKRSports.DataStore.HardCoded;
+using TDKRSports.DataStore.SQL.Dapper;
 using TDKRSports.StateStore.DI;
 using TDKRSports.UseCases.OrderConfirmationScreen;
 using TDKRSports.UseCases.PluginInterfaces.DataStore;
@@ -53,14 +54,17 @@ namespace TDKRSports.Web
 
             //dependency injection SINGLETONS
             //singleton sve sta je baza
-            services.AddSingleton<IProductRepository, ProductRepository>();
-            services.AddSingleton<IOrderRepository, OrderRepository>();
+            //services.AddSingleton<IProductRepository, ProductRepository>();
+            //services.AddSingleton<IOrderRepository, OrderRepository>();
 
             //dependency injection SCOPES
             services.AddScoped<IShoppingCart, TDKRSports.ShoppingCart.LocalStorage.ShoppingCart>(); // ako je singleton svi useri ce moci vidjeti , ovako ce samo user vidit sam svoj cart
             services.AddScoped<IShoppingCartStateStore, ShoppingCartStateStore>();
 
             //dependency injection TRANSIENTS
+            services.AddTransient<IDataAccess>(sp => new DataAccess(Configuration.GetConnectionString("Default")));
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
             services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<IViewProductUseCase, ViewProductUseCase>();
             services.AddTransient<ISearchProductUseCase, SearchProductUseCase>();
