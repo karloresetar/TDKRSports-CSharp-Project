@@ -38,14 +38,14 @@
            {
                <tr>
                    <td>@item.Product.Name</td>
-                   <td>@item.Product.Price €</td>
+                   <td>@item.Product.Price.ToString("C")</td>
                    <td>@item.Quantity</td>
                </tr>
            }
         </tbody>
     </table>
     <br />
-    <button type="button" class="btn btn-primary" @onclick="HandleProcessOrder">Mark order as processed</button>
+    <button type="button" class="btn btn-dark" @onclick="HandleProcessOrder">Mark order as processed</button>
 }
 
 @code {

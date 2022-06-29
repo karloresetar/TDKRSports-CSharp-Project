@@ -17,7 +17,7 @@
                 <input type="number" min="0" value="@LineItem.Quantity" @onchange="HandleQuantityChange" />
             </div>
             <div>
-                <b>Price:&nbsp;&nbsp;@LineItem.Product.Price €</b>
+                <b>Price:&nbsp;&nbsp;@LineItem.Product.Price.ToString("C")</b>
             </div>
         </div>
         <div class="col">

@@ -8,7 +8,7 @@
                     Items (@itemsCount):
                 </div>
                 <div>
-                    @itemsTotalPrice €
+                    @itemsTotalPrice.ToString("C")
                 </div>
             </div>
             <div class="card-text d-flex justify-content-between">
@@ -33,13 +33,13 @@
                     <b>Order Total:</b>
                 </div>
                 <div>
-                    <b>@itemsTotalPrice €</b>
+                    <b>@itemsTotalPrice.ToString("C")</b>
                 </div>
             </div>
         </div>
         @if(!HidePlaceOrder)
         {
-            <button class="button btn-primary" @onclick="PlaceOrder">Place your order</button>
+            <button class="button btn-dark" @onclick="PlaceOrder">Place your order</button>
         }
     </div>
 
