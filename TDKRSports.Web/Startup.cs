@@ -53,7 +53,7 @@ namespace TDKRSports.Web
             services.AddSingleton<WeatherForecastService>();
 
             //dependency injection SINGLETONS
-            //singleton sve sta je baza
+            //singleton je za inmemory
             //services.AddSingleton<IProductRepository, ProductRepository>();
             //services.AddSingleton<IOrderRepository, OrderRepository>();
 
@@ -61,10 +61,13 @@ namespace TDKRSports.Web
             services.AddScoped<IShoppingCart, TDKRSports.ShoppingCart.LocalStorage.ShoppingCart>(); // ako je singleton svi useri ce moci vidjeti , ovako ce samo user vidit sam svoj cart
             services.AddScoped<IShoppingCartStateStore, ShoppingCartStateStore>();
 
-            //dependency injection TRANSIENTS
+            // BAZA DI
             services.AddTransient<IDataAccess>(sp => new DataAccess(Configuration.GetConnectionString("Default")));
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IOrderRepository, OrderRepository>();
+
+
+            //dependency injection TRANSIENTS
             services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<IViewProductUseCase, ViewProductUseCase>();
             services.AddTransient<ISearchProductUseCase, SearchProductUseCase>();
@@ -73,11 +76,14 @@ namespace TDKRSports.Web
             services.AddTransient<IDeleteProductUseCase, DeleteProductUseCase>();
             services.AddTransient<IUpdateQuantityUseCase, UpdateQuantityUseCase>();
             services.AddTransient<IPlaceOrderUseCase, PlaceOrderUseCase>();
-            services.AddTransient<IViewOrderConfirmationUseCase,ViewOrderConfirmationUseCase>();
+            services.AddTransient<IViewOrderConfirmationUseCase, ViewOrderConfirmationUseCase>();
+
+
             services.AddTransient<IViewOutstandingOrdersUseCase, ViewOutstandingOrdersUseCase>();
             services.AddTransient<IProcessOrderUseCase, ProcessOrderUseCase>();
             services.AddTransient<IViewOrderDetailUseCase, ViewOrderDetailUseCase>();
             services.AddTransient<IViewProcessedOrdersUseCase, ViewProcessedOrdersUseCase>();
+
 
         }
 

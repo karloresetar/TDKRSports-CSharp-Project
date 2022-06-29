@@ -18,10 +18,12 @@
     <p class="card-text">@product.Description</p>
     
   </div>
-  <button class="btn btn-primary" @onclick="AddToCart">Add To Cart</button>
+  <button class="btn btn-dark" @onclick="AddToCart">Add To Cart</button>
 </div>
 <br />
 <NavLink href="products">Back to all products</NavLink>
+<br />
+<br />
 
 @code {
     private Product product;
@@ -42,7 +44,7 @@
     private void AddToCart()
     {
         addProductToCartUseCase.Execute(product.ProductId);
-        navigationManager.NavigateTo("/");
+        navigationManager.NavigateTo("/products");
     }
 
 }

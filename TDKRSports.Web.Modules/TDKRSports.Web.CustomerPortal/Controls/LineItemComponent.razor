@@ -1,4 +1,5 @@
-﻿@inject IDeleteProductUseCase deleteProductUseCase
+﻿@using System.Globalization
+@inject IDeleteProductUseCase deleteProductUseCase
 @inject IUpdateQuantityUseCase updateQuantityUseCase
 
 <MessageComponent @ref="messageComponent"></MessageComponent>
@@ -53,7 +54,7 @@
             var order = await updateQuantityUseCase.Execute(LineItem.ProductId, qty);
             await OnUpdateQuantity.InvokeAsync(order);
 
-         }
+        }
     }
 
     async void DeleteProduct(int productId)
@@ -61,4 +62,7 @@
         var order = await deleteProductUseCase.Execute(productId); // order je u parent komponenti tj. u shoppingCart komponenti i tribamo updateat pomocu EventCallbackova
         await OnDeleteProduct.InvokeAsync(order);
     }
+
+    
+
 }

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Images\tdkrsportlogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Plugins\TDKRSports.DataStore.HardCoded\TDKRSports.DataStore.HardCoded.csproj" />
     <ProjectReference Include="..\Plugins\TDKRSports.DataStore.SQL.Dapper\TDKRSports.DataStore.SQL.Dapper.csproj" />
     <ProjectReference Include="..\Plugins\TDKRSports.ShoppingCart.LocalStorage\TDKRSports.ShoppingCart.LocalStorage.csproj" />

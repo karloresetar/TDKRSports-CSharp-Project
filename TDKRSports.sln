@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.ShoppingCart.Loc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.StateStore.DI", "Plugins\TDKRSports.StateStore.DI\TDKRSports.StateStore.DI.csproj", "{BA411128-5D3D-4A0B-BBD9-B968BD9C460C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDKRSports.DataStore.SQL.Dapper", "Plugins\TDKRSports.DataStore.SQL.Dapper\TDKRSports.DataStore.SQL.Dapper.csproj", "{E52B3003-B269-4BDB-AEBF-0F2DE6BEA673}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDKRSports.DataStore.SQL.Dapper", "Plugins\TDKRSports.DataStore.SQL.Dapper\TDKRSports.DataStore.SQL.Dapper.csproj", "{E52B3003-B269-4BDB-AEBF-0F2DE6BEA673}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

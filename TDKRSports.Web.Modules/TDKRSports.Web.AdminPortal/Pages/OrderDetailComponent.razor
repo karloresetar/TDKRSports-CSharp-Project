@@ -17,12 +17,12 @@
     <p>
         <b>Customer Info</b>
     </p>
-    <p>@order.CustomerName</p>
-    <p>@order.CustomerAddress</p>
-    <p>@order.CustomerCity</p>
-    <p>@order.CustomerStateProvince</p>
-    <p>@order.CustomerCountry</p>
-    <p>@order.CustomerEmail</p>
+    <p><b>Name:</b> @order.CustomerName</p>
+    <p><b>Address:</b> @order.CustomerAddress</p>
+    <p><b>City:</b> @order.CustomerCity</p>
+    <p><b>StateProvince:</b> @order.CustomerStateProvince</p>
+    <p><b>Country:</b> @order.CustomerCountry</p>
+    <p><b>Email:</b> @order.CustomerEmail</p>
     <br />
     <br />
     <table class="table">
@@ -38,14 +38,14 @@
            {
                <tr>
                    <td>@item.Product.Name</td>
-                   <td>@item.Product.Price</td>
+                   <td>@item.Product.Price.ToString("C")</td>
                    <td>@item.Quantity</td>
                </tr>
            }
         </tbody>
     </table>
     <br />
-    <button type="button" class="btn btn-primary" @onclick="HandleProcessOrder">Mark order as processed</button>
+    <button type="button" class="btn btn-dark" @onclick="HandleProcessOrder">Mark order as processed</button>
 }
 
 @code {
