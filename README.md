@@ -15,7 +15,13 @@
 
 ## Project Preview ##
 
-![](https://im3.ezgif.com/tmp/ezgif-3-4790d06d52.gif)
+**Customer Portal**
+
+![](./customerportalpreview.gif)
+
+**Admin Portal**
+
+![](./adminportalpreview.gif)
 
 ## Features ##
 - Customers can look through our product catalogue online
